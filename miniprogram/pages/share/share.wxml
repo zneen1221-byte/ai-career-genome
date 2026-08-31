@@ -1,0 +1,10 @@
+<!-- pages/share/share.wxml - 分享页（海报） -->
+<view class="container">
+  <view class="placeholder">[分享页 - Phase 5 实现]</view>
+  <!--
+    TODO Phase 5: 海报内容
+    - 用户职业类型
+    - 简短描述
+    - 小程序二维码
+  -->
+</view>

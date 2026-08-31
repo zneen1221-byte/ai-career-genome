@@ -1,0 +1,21 @@
+/* pages/test/test.wxss - 答题页 */
+.page { position: relative; min-height: 100vh; overflow: hidden; }
+.bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #1a1a2e, #16213e); }
+.content { position: relative; z-index: 1; min-height: 100vh; padding: 40rpx 40rpx 180rpx; display: flex; flex-direction: column; }
+.progress-bar { width: 100%; height: 8rpx; background: rgba(255,255,255,0.15); border-radius: 4rpx; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #6c5ce7, #a29bfe); transition: width .3s; }
+.progress-text { color: #a5b1c2; font-size: 26rpx; margin: 24rpx 0 48rpx; }
+.q-title { color: #a29bfe; font-size: 30rpx; margin-bottom: 16rpx; }
+.q-question { color: #fff; font-size: 40rpx; font-weight: 600; line-height: 1.5; margin-bottom: 60rpx; }
+.options { display: flex; flex-direction: column; gap: 24rpx; }
+.option { display: flex; align-items: center; padding: 32rpx; background: rgba(255,255,255,0.06); border: 2rpx solid rgba(255,255,255,0.12); border-radius: 24rpx; }
+.option.selected { background: rgba(108,92,231,0.25); border-color: #6c5ce7; }
+.opt-label { width: 56rpx; height: 56rpx; line-height: 56rpx; text-align: center; background: rgba(255,255,255,0.1); color: #a29bfe; border-radius: 50%; margin-right: 24rpx; font-size: 28rpx; font-weight: bold; }
+.option.selected .opt-label { background: #6c5ce7; color: #fff; }
+.opt-text { color: #e8e8f0; font-size: 30rpx; flex: 1; }
+.footer { position: fixed; bottom: 0; left: 0; right: 0; padding: 24rpx 40rpx calc(24rpx + env(safe-area-inset-bottom)); display: flex; justify-content: space-between; align-items: center; background: linear-gradient(180deg, transparent, #0f0f1e 40%); }
+.btn-ghost { color: #778ca3; font-size: 28rpx; padding: 16rpx; }
+.btn-cta { background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: #fff; border-radius: 48rpx; height: 88rpx; line-height: 88rpx; padding: 0 60rpx; font-size: 32rpx; border: none; }
+.btn-cta::after { border: none; }
+.btn-hint { color: #576574; font-size: 26rpx; flex: 1; text-align: right; }
+.loading { color: #778ca3; text-align: center; padding-top: 300rpx; position: relative; z-index: 1; }

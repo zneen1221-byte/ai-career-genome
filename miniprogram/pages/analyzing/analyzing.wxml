@@ -1,0 +1,13 @@
+<!-- pages/analyzing/analyzing.wxml - AI 分析中 -->
+<view class="page">
+  <view class="bg"></view>
+  <view class="content">
+    <view class="spinner"></view>
+    <view class="title">正在分析你的职业基因...</view>
+    <view class="steps">
+      <view class="step {{step>=1 ? 'done' : ''}}">{{step>=1 ? '✓' : '○'}} 分析能力模型</view>
+      <view class="step {{step>=2 ? 'done' : ''}}">{{step>=2 ? '✓' : '○'}} 匹配职业数据库</view>
+      <view class="step {{step>=3 ? 'done' : ''}}">{{step>=3 ? '✓' : '○'}} 生成未来方向</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+/* pages/analyzing/analyzing.wxss - 分析中 */
+.page { position: relative; min-height: 100vh; overflow: hidden; }
+.bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #1a1a2e, #2d1b4e, #16213e); }
+.content { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.spinner { width: 80rpx; height: 80rpx; border: 6rpx solid rgba(255,255,255,0.15); border-top-color: #a29bfe; border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 48rpx; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.title { color: #fff; font-size: 36rpx; margin-bottom: 60rpx; }
+.steps .step { color: #576574; font-size: 30rpx; line-height: 2.6; text-align: center; transition: color .3s; }
+.steps .step.done { color: #00b894; }

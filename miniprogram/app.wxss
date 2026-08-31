@@ -1,0 +1,12 @@
+/* app.wxss - 全局样式与主题 */
+page {
+  background-color: #0f0f1e;
+  color: #e8e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+.container {
+  min-height: 100vh;
+  box-sizing: border-box;
+}

@@ -1,0 +1,36 @@
+# ===== 依赖（体积大且可重装，不上传） =====
+node_modules/
+cloudfunctions/*/node_modules/
+miniprogram/node_modules/
+miniprogram/miniprogram_npm/
+
+# ===== 废弃旧后端（含本地 MySQL 密码，绝不上传） =====
+server/
+
+# ===== 敏感配置（本地真实值，不上传；提交 config.example.js 占位符） =====
+miniprogram/config.js
+
+# ===== 微信开发者工具个人配置（每台机器不同，不上传） =====
+project.private.config.json
+
+# ===== 日志 =====
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== 系统文件 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 编辑器 / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== 构建产物 / 缓存 =====
+*.tgz
+.miniprogram-cache/

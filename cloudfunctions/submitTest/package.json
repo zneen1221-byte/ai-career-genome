@@ -1,0 +1,9 @@
+{
+  "name": "submitTest",
+  "version": "1.0.0",
+  "description": "提交答案 + 评分 + 返回职业类型结果",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

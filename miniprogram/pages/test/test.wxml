@@ -1,0 +1,35 @@
+<!-- pages/test/test.wxml - 答题页：一屏一题 -->
+<view class="page">
+  <view class="bg"></view>
+
+  <view class="content" wx:if="{{!loading && questions.length}}">
+    <!-- 进度 -->
+    <view class="progress-bar">
+      <view class="progress-fill" style="width:{{(currentIndex+1)*100/total}}%"></view>
+    </view>
+    <view class="progress-text">第 {{currentIndex+1}} / {{total}} 题</view>
+
+    <!-- 题目 -->
+    <view class="q-title">{{questions[currentIndex].title}}</view>
+    <view class="q-question">{{questions[currentIndex].question}}</view>
+
+    <!-- 选项 A/B/C/D -->
+    <view class="options">
+      <view wx:for="{{questions[currentIndex].options}}" wx:for-item="opt" wx:for-index="key"
+            data-option="{{key}}" bindtap="onSelectOption"
+            class="option {{selected===key ? 'selected' : ''}}">
+        <view class="opt-label">{{key}}</view>
+        <view class="opt-text">{{opt}}</view>
+      </view>
+    </view>
+
+    <!-- 底部 -->
+    <view class="footer">
+      <view wx:if="{{currentIndex>0}}" class="btn-ghost" bindtap="onPrev">← 上一题</view>
+      <button wx:if="{{currentIndex===total-1}}" class="btn-cta" bindtap="onSubmit" loading="{{submitting}}">查看结果</button>
+      <view wx:else class="btn-hint">选择后自动进入下一题</view>
+    </view>
+  </view>
+
+  <view class="loading" wx:if="{{loading}}">加载题目中...</view>
+</view>

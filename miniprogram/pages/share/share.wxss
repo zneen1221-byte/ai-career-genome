@@ -1,0 +1,12 @@
+/* pages/share/share.wxss - 分享页样式（占位） */
+.container {
+  min-height: 100vh;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.placeholder {
+  text-align: center;
+  color: #778ca3;
+  margin-top: 200rpx;
+}

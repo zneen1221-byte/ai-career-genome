@@ -1,0 +1,21 @@
+/* pages/result/result.wxss - 报告页 */
+.page { position: relative; min-height: 100vh; overflow: hidden; }
+.bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #16213e 100%); }
+.content { position: relative; z-index: 1; min-height: 100vh; padding: 60rpx 40rpx; display: flex; flex-direction: column; align-items: center; }
+.badge { color: #a29bfe; font-size: 26rpx; margin-bottom: 24rpx; }
+.type-name { font-size: 72rpx; font-weight: bold; color: #fff; margin-bottom: 24rpx; }
+.type-desc { color: #a5b1c2; font-size: 28rpx; text-align: center; line-height: 1.6; margin-bottom: 48rpx; padding: 0 40rpx; }
+.card { width: 100%; background: rgba(255,255,255,0.06); border: 2rpx solid rgba(255,255,255,0.1); border-radius: 24rpx; padding: 32rpx; margin-bottom: 24rpx; box-sizing: border-box; }
+.card-title { color: #a29bfe; font-size: 28rpx; margin-bottom: 16rpx; }
+.card-text { color: #e8e8f0; font-size: 30rpx; line-height: 1.6; }
+.scores { display: flex; flex-direction: column; gap: 20rpx; }
+.score-row { display: flex; align-items: center; }
+.score-label { width: 48rpx; color: #778ca3; font-size: 28rpx; font-weight: bold; }
+.score-bar { flex: 1; height: 16rpx; background: rgba(255,255,255,0.1); border-radius: 8rpx; overflow: hidden; margin: 0 20rpx; }
+.score-fill { height: 100%; background: linear-gradient(90deg, #6c5ce7, #a29bfe); }
+.score-val { width: 48rpx; text-align: right; color: #a5b1c2; font-size: 26rpx; }
+.btn-share { width: 100%; margin-top: 48rpx; background: rgba(255,255,255,0.08); color: #a29bfe; border: 2rpx solid rgba(162,155,254,0.3); border-radius: 48rpx; height: 96rpx; line-height: 96rpx; font-size: 30rpx; }
+.btn-share::after { border: none; }
+.btn-cta { width: 100%; margin-top: 32rpx; background: linear-gradient(90deg, #6c5ce7, #a29bfe); color: #fff; border-radius: 48rpx; height: 96rpx; line-height: 96rpx; font-size: 32rpx; border: none; }
+.btn-cta::after { border: none; }
+.hint { color: #576574; font-size: 24rpx; margin-top: 32rpx; text-align: center; }
