@@ -35,3 +35,17 @@
   font-size: 30rpx; border: none;
 }
 .btn-back::after { border: none; }
+
+/* Phase 4+: 隐私页抛光 - header + section cascade fadeUp 入场 */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16rpx); } to { opacity: 1; transform: translateY(0); } }
+.header { animation: fadeUp 0.5s ease-out both; }
+.section { animation: fadeUp 0.5s ease-out both; }
+.section:nth-of-type(1) { animation-delay: 0.1s; }
+.section:nth-of-type(2) { animation-delay: 0.15s; }
+.section:nth-of-type(3) { animation-delay: 0.2s; }
+.section:nth-of-type(4) { animation-delay: 0.25s; }
+.section:nth-of-type(5) { animation-delay: 0.3s; }
+.section:nth-of-type(6) { animation-delay: 0.35s; }
+.section:nth-of-type(7) { animation-delay: 0.4s; }
+.section:nth-of-type(8) { animation-delay: 0.45s; }
+.btn-back { animation: fadeUp 0.5s ease-out both; animation-delay: 0.5s; }

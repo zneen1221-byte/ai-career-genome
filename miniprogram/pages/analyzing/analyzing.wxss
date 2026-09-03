@@ -7,3 +7,13 @@
 .title { color: #fff; font-size: 36rpx; margin-bottom: 60rpx; }
 .steps .step { color: #576574; font-size: 30rpx; line-height: 2.6; text-align: center; transition: color .3s; }
 .steps .step.done { color: #00b894; }
+
+/* Phase 4+: 分析中抛光 - spinner 加大 + glow 光晕 + 标题呼吸 + 步骤 cascade */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10rpx); } to { opacity: 1; transform: translateY(0); } }
+@keyframes titleBreathe { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+.spinner { width: 120rpx; height: 120rpx; box-shadow: 0 0 32rpx rgba(162,155,254,0.4); }
+.title { animation: titleBreathe 2s ease-in-out infinite; }
+.steps .step { animation: fadeUp 0.4s ease-out both; }
+.steps .step:nth-child(1) { animation-delay: 0.2s; }
+.steps .step:nth-child(2) { animation-delay: 0.4s; }
+.steps .step:nth-child(3) { animation-delay: 0.6s; }

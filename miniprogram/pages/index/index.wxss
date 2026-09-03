@@ -11,7 +11,7 @@
   align-items: center; justify-content: center;
   padding: 60rpx;
 }
-.logo { font-size: 120rpx; margin-bottom: 40rpx; }
+.logo { width: 140rpx; height: 140rpx; border-radius: 50%; margin-bottom: 40rpx; box-shadow: 0 8rpx 32rpx rgba(162,155,254,0.3); }
 .slogan { font-size: 32rpx; color: #a5b1c2; margin-bottom: 24rpx; }
 .title { font-size: 56rpx; font-weight: bold; color: #fff; text-align: center; margin-bottom: 24rpx; line-height: 1.4; }
 .meta { font-size: 26rpx; color: #778ca3; margin-bottom: 80rpx; }
@@ -26,3 +26,14 @@
 .social { font-size: 24rpx; color: #576574; margin-top: 60rpx; animation: fadeIn 1.2s ease-out both; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .privacy-link { font-size: 24rpx; color: #778ca3; margin-top: 20rpx; text-decoration: underline; }
+
+/* Phase 4+: 首页抛光 - logo 呼吸 + hero cascade 入场 + CTA 按下反馈 */
+@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20rpx); } to { opacity: 1; transform: translateY(0); } }
+.logo { animation: breathe 3s ease-in-out infinite; }
+.slogan { animation: fadeUp 0.6s ease-out both; animation-delay: 0.1s; }
+.title { animation: fadeUp 0.6s ease-out both; animation-delay: 0.2s; }
+.meta { animation: fadeUp 0.6s ease-out both; animation-delay: 0.3s; }
+.cta { animation: fadeUp 0.6s ease-out both; animation-delay: 0.4s; transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; box-shadow: 0 8rpx 24rpx rgba(108,92,231,0.3); }
+.cta:active { transform: scale(0.97); box-shadow: 0 4rpx 12rpx rgba(108,92,231,0.4); }
+.privacy-link { animation: fadeUp 0.6s ease-out both; animation-delay: 0.5s; }

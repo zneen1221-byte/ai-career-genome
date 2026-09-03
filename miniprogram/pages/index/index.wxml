@@ -2,10 +2,10 @@
 <view class="page">
   <view class="bg"></view>
   <view class="content">
-    <view class="logo">🧬</view>
+    <image class="logo" src="/assets/logo.png" mode="aspectFit"></image>
     <view class="slogan">AI 正在改变职业世界</view>
     <view class="title">你的未来职业方向\n在哪里？</view>
-    <view class="meta">15 道问题 · AI 生成职业基因报告</view>
+    <view class="meta">20 道问题 · AI 生成职业基因报告</view>
     <button class="cta" bindtap="onStart">开始测试</button>
     <view class="social">已有 12,847 人完成测试</view>
     <view class="privacy-link" bindtap="onPrivacy">隐私政策</view>
