@@ -23,5 +23,6 @@
   padding: 0; box-sizing: border-box;
 }
 .cta::after { border: none; }
-.social { font-size: 24rpx; color: #576574; margin-top: 60rpx; }
+.social { font-size: 24rpx; color: #576574; margin-top: 60rpx; animation: fadeIn 1.2s ease-out both; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .privacy-link { font-size: 24rpx; color: #778ca3; margin-top: 20rpx; text-decoration: underline; }

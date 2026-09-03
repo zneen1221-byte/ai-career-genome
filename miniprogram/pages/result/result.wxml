@@ -37,6 +37,10 @@
       </view>
     </block>
 
+    <!-- AI 区与静态区分隔（Phase 4） -->
+    <view class="section-divider"></view>
+    <view class="section-label">基础画像</view>
+
     <!-- 静态描述区（原有） -->
     <view class="card">
       <view class="card-title">🌟 核心优势</view>

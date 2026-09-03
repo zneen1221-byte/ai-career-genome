@@ -3,9 +3,11 @@
 .bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #16213e 100%); }
 .content { position: relative; z-index: 1; min-height: 100vh; padding: 60rpx 40rpx; display: flex; flex-direction: column; align-items: center; }
 .badge { color: #a29bfe; font-size: 26rpx; margin-bottom: 24rpx; }
-.type-name { font-size: 72rpx; font-weight: bold; color: #fff; margin-bottom: 24rpx; }
+.type-name { font-size: 72rpx; font-weight: bold; color: #fff; margin-bottom: 24rpx; text-shadow: 0 4rpx 24rpx rgba(162,155,254,0.3); }
 .type-desc { color: #a5b1c2; font-size: 28rpx; text-align: center; line-height: 1.6; margin-bottom: 48rpx; padding: 0 40rpx; }
 .card { width: 100%; background: rgba(255,255,255,0.06); border: 2rpx solid rgba(255,255,255,0.1); border-radius: 24rpx; padding: 32rpx; margin-bottom: 24rpx; box-sizing: border-box; }
+/* AI 报告区卡片加紫色边框（Phase 4 视觉层次） */
+.ai-summary, .ai-tag + .card { border-color: rgba(162,155,254,0.2); }
 .card-title { color: #a29bfe; font-size: 28rpx; margin-bottom: 16rpx; }
 .card-text { color: #e8e8f0; font-size: 30rpx; line-height: 1.6; }
 .scores { display: flex; flex-direction: column; gap: 20rpx; }
@@ -40,3 +42,15 @@
 .phase-action { color: #e8e8f0; font-size: 28rpx; line-height: 1.6; padding-left: 16rpx; }
 
 .ai-fallback { color: #778ca3; font-size: 24rpx; margin-top: 32rpx; text-align: center; font-style: italic; }
+
+/* Phase 4：UI 抛光 - cascade 入场 + 分隔区 + section label */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20rpx); } to { opacity: 1; transform: translateY(0); } }
+.ai-tag { animation: fadeUp 0.5s ease-out both; animation-delay: 0s; }
+.ai-summary { animation: fadeUp 0.5s ease-out both; animation-delay: 0.1s; }
+.ai-summary + .card { animation: fadeUp 0.5s ease-out both; animation-delay: 0.2s; }
+.ai-summary + .card + .card { animation: fadeUp 0.5s ease-out both; animation-delay: 0.3s; }
+.ai-summary + .card + .card + .card { animation: fadeUp 0.5s ease-out both; animation-delay: 0.4s; }
+.ai-summary + .card + .card + .card + .card { animation: fadeUp 0.5s ease-out both; animation-delay: 0.5s; }
+
+.section-divider { width: 100%; height: 2rpx; background: rgba(255,255,255,0.1); margin: 32rpx 0; }
+.section-label { color: #778ca3; font-size: 24rpx; text-align: center; margin-bottom: 24rpx; letter-spacing: 4rpx; }
