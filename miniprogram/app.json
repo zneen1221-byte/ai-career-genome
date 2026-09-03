@@ -4,7 +4,8 @@
     "pages/test/test",
     "pages/analyzing/analyzing",
     "pages/result/result",
-    "pages/share/share"
+    "pages/share/share",
+    "pages/privacy/privacy"
   ],
   "window": {
     "backgroundTextStyle": "light",

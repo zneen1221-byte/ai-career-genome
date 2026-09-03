@@ -1,0 +1,37 @@
+/* pages/privacy/privacy.wxss - 隐私政策 */
+.page { position: relative; min-height: 100vh; overflow: hidden; }
+.bg {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #16213e 100%);
+}
+.content {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  padding: 60rpx 40rpx;
+  box-sizing: border-box;
+}
+.header { text-align: center; margin-bottom: 48rpx; }
+.h-title { font-size: 48rpx; font-weight: bold; color: #fff; margin-bottom: 16rpx; }
+.h-date { font-size: 24rpx; color: #778ca3; }
+.section {
+  background: rgba(255,255,255,0.06);
+  border: 2rpx solid rgba(255,255,255,0.1);
+  border-radius: 24rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+}
+.s-title { color: #a29bfe; font-size: 30rpx; font-weight: 600; margin-bottom: 16rpx; }
+.s-text { color: #e8e8f0; font-size: 26rpx; line-height: 1.7; margin-bottom: 12rpx; }
+.s-text:last-child { margin-bottom: 0; }
+.s-list { display: flex; flex-direction: column; gap: 16rpx; margin-top: 12rpx; }
+.s-item { display: flex; flex-direction: column; }
+.i-label { color: #dfe6e9; font-size: 28rpx; font-weight: 600; margin-bottom: 8rpx; }
+.i-desc { color: #a5b1c2; font-size: 26rpx; line-height: 1.6; }
+.bold { color: #fff; font-weight: 600; }
+.btn-back {
+  width: 100%; margin-top: 48rpx;
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+  color: #fff; border-radius: 48rpx; height: 88rpx; line-height: 88rpx;
+  font-size: 30rpx; border: none;
+}
+.btn-back::after { border: none; }

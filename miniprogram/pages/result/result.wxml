@@ -1,4 +1,4 @@
-<!-- pages/result/result.wxml - 报告页（Phase 2：主类型 + 静态描述） -->
+<!-- pages/result/result.wxml - 报告页（Phase 3：静态描述 + AI 深度报告） -->
 <view class="page">
   <view class="bg"></view>
   <view class="content" wx:if="{{result}}">
@@ -6,6 +6,38 @@
     <view class="type-name">{{result.type_info.type_name}}</view>
     <view class="type-desc">{{result.type_info.description}}</view>
 
+    <!-- AI 深度报告（Phase 3 新增） -->
+    <block wx:if="{{result.ai_report}}">
+      <view class="ai-tag">✦ AI 深度报告</view>
+
+      <view class="card ai-summary">
+        <view class="card-title">一句话画像</view>
+        <view class="card-text">{{result.ai_report.summary}}</view>
+      </view>
+
+      <view class="card" wx:for="{{result.ai_report.advantages}}" wx:key="title">
+        <view class="card-title">{{index+1}}. {{item.title}}</view>
+        <view class="card-text">{{item.detail}}</view>
+      </view>
+
+      <view class="card">
+        <view class="card-title">AI 时代职业方向</view>
+        <view wx:for="{{result.ai_report.career_paths}}" wx:key="direction" class="path-item">
+          <view class="path-name">{{item.direction}} <text class="fit fit-{{item.fit}}">{{item.fit === 'high' ? '高' : item.fit === 'mid' ? '中' : '低'}}</text></view>
+          <view class="path-reason">{{item.reason}}</view>
+        </view>
+      </view>
+
+      <view class="card">
+        <view class="card-title">成长行动路线</view>
+        <view wx:for="{{result.ai_report.action_plan}}" wx:key="phase" class="plan-phase">
+          <view class="phase-title">{{item.phase}}</view>
+          <view class="phase-action" wx:for="{{item.actions}}" wx:for-item="act" wx:key="*this">· {{act}}</view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 静态描述区（原有） -->
     <view class="card">
       <view class="card-title">🌟 核心优势</view>
       <view class="card-text">{{result.type_info.strength}}</view>
@@ -27,8 +59,10 @@
       </view>
     </view>
 
+    <!-- AI 失败兜底提示（仅当尝试过但失败时显示） -->
+    <view class="ai-fallback" wx:if="{{!result.ai_report}}">深度 AI 报告生成失败，已展示基础画像</view>
+
     <button class="btn-share" open-type="share">分享给朋友，看 TA 是什么基因</button>
     <button class="btn-cta" bindtap="onRestart">重新测试</button>
-    <view class="hint">🌟 深度 AI 报告（优势分析 + 成长路线）即将上线</view>
   </view>
 </view>

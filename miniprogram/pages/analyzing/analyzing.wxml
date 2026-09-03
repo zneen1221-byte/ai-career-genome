@@ -3,11 +3,11 @@
   <view class="bg"></view>
   <view class="content">
     <view class="spinner"></view>
-    <view class="title">正在分析你的职业基因...</view>
+    <view class="title">正在生成你的专属 AI 报告...</view>
     <view class="steps">
       <view class="step {{step>=1 ? 'done' : ''}}">{{step>=1 ? '✓' : '○'}} 分析能力模型</view>
-      <view class="step {{step>=2 ? 'done' : ''}}">{{step>=2 ? '✓' : '○'}} 匹配职业数据库</view>
-      <view class="step {{step>=3 ? 'done' : ''}}">{{step>=3 ? '✓' : '○'}} 生成未来方向</view>
+      <view class="step {{step>=2 ? 'done' : ''}}">{{step>=2 ? '✓' : '○'}} 匹配职业基因</view>
+      <view class="step {{step>=3 ? 'done' : ''}}">{{step>=3 ? '✓' : '○'}} 生成 AI 深度报告</view>
     </view>
   </view>
 </view>

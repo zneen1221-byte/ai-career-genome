@@ -26,7 +26,8 @@
     <!-- 底部 -->
     <view class="footer">
       <view wx:if="{{currentIndex>0}}" class="btn-ghost" bindtap="onPrev">← 上一题</view>
-      <button wx:if="{{currentIndex===total-1}}" class="btn-cta" bindtap="onSubmit" loading="{{submitting}}">查看结果</button>
+      <button wx:if="{{currentIndex===total-1 && selected}}" class="btn-cta" bindtap="onSubmit" loading="{{submitting}}">查看结果</button>
+      <view wx:elif="{{currentIndex===total-1}}" class="btn-hint">选择后查看结果</view>
       <view wx:else class="btn-hint">选择后自动进入下一题</view>
     </view>
   </view>

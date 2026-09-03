@@ -1,0 +1,93 @@
+<!-- pages/privacy/privacy.wxml - 隐私政策 -->
+<view class="page">
+  <view class="bg"></view>
+  <view class="content">
+    <view class="header">
+      <view class="h-title">隐私政策</view>
+      <view class="h-date">更新日期：2026年9月3日</view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">一、概述</view>
+      <view class="s-text">「AI Career Genome」（AI时代职业基因测试）小程序（以下简称"本小程序"）非常重视用户隐私。本政策说明你在使用测试功能时我们收集的信息、用途及保护措施。开始测试即视为你已阅读并同意本政策。</view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">二、我们收集什么信息</view>
+      <view class="s-text">为生成你的职业报告，我们仅收集以下必要信息：</view>
+      <view class="s-list">
+        <view class="s-item">
+          <view class="i-label">openid（用户标识）</view>
+          <view class="i-desc">微信云开发自动分配的唯一标识符，用于区分不同用户。这不是你的微信号或手机号，我们无法借此识别你的真实身份。</view>
+        </view>
+        <view class="s-item">
+          <view class="i-label">测试答案</view>
+          <view class="i-desc">你在 15 道测试题中所作的选择（每题 A/B/C/D），用于计算职业人格倾向。</view>
+        </view>
+        <view class="s-item">
+          <view class="i-label">测试结果</view>
+          <view class="i-desc">根据答案计算出的主职业人格类型（创造者/战略家/影响者/经营者/匠人/探索者）及 6 维得分。</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">三、我们如何使用信息</view>
+      <view class="s-text">收集的信息仅用于：</view>
+      <view class="s-list">
+        <view class="s-item"><view class="i-desc">• 分析你的职业人格倾向，生成「AI时代职业报告」；</view></view>
+        <view class="s-item"><view class="i-desc">• 记录测试历史，便于你随时回顾自己的结果；</view></view>
+        <view class="s-item"><view class="i-desc">• 汇总匿名统计数据（如各类型分布人数）用于优化产品，统计不指向具体个人。</view></view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">四、我们如何存储信息</view>
+      <view class="s-list">
+        <view class="s-item">
+          <view class="i-label">存储位置</view>
+          <view class="i-desc">所有数据存储于微信云开发提供的云数据库（腾讯云服务器），不存储在我们本地设备。</view>
+        </view>
+        <view class="s-item">
+          <view class="i-label">访问权限</view>
+          <view class="i-desc">数据集合设置为「仅管理端可读写」，即只有经过授权的云函数能访问，普通用户无法读取他人数据。</view>
+        </view>
+        <view class="s-item">
+          <view class="i-label">保存期限</view>
+          <view class="i-desc">测试结果长期保存以便你随时回顾；如你希望删除，可按本政策第六条联系开发者。</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">五、我们不会做什么</view>
+      <view class="s-list">
+        <view class="s-item"><view class="i-desc">• 不收集手机号、微信号、真实姓名、地理位置、通讯录、相册等敏感个人信息；</view></view>
+        <view class="s-item"><view class="i-desc">• 不向任何第三方分享、出售或出租你的数据；</view></view>
+        <view class="s-item"><view class="i-desc">• 不将你的数据用于商业广告投放或跨平台用户画像。</view></view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">六、你的权利</view>
+      <view class="s-text">你对自己的数据享有以下权利：</view>
+      <view class="s-list">
+        <view class="s-item"><view class="i-desc">• <text class="bold">查询权</text>：你可随时在小程序内查看自己的测试结果；</view></view>
+        <view class="s-item"><view class="i-desc">• <text class="bold">删除权</text>：你可随时联系我们，要求删除你的全部测试数据；</view></view>
+        <view class="s-item"><view class="i-desc">• <text class="bold">撤回权</text>：你可停止使用本小程序，我们不会主动收集新的数据。</view></view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">七、联系我们</view>
+      <view class="s-text">如你对本政策或自己的数据有任何疑问，或希望删除你的数据，请通过微信小程序官方客服渠道联系开发者，我们将在收到请求后合理期限内予以回复或处理。</view>
+    </view>
+
+    <view class="section">
+      <view class="s-title">八、政策更新</view>
+      <view class="s-text">本政策可能随业务发展而更新。更新后我们会在本页面公示新版本及生效日期，你继续使用即视为同意更新后的政策。</view>
+    </view>
+
+    <button class="btn-back" bindtap="onBack">我已了解，返回</button>
+  </view>
+</view>

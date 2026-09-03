@@ -41,7 +41,8 @@
     "compileWorklet": false,
     "localPlugins": false,
     "useCompilerPlugins": false,
-    "condition": false
+    "condition": false,
+    "disableSWC": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.32.3",

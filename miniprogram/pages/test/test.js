@@ -63,6 +63,7 @@ Page({
     this.setData({ submitting: true })
     try {
       const result = await request.call('submitTest', { answers: arr })
+      result.answers = arr   // Phase 3：给 AI 报告生成用
       wx.setStorageSync('testResult', result)
       wx.redirectTo({ url: '/pages/analyzing/analyzing' })
     } catch (e) {

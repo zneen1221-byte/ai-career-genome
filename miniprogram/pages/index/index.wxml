@@ -8,5 +8,6 @@
     <view class="meta">15 道问题 · AI 生成职业基因报告</view>
     <button class="cta" bindtap="onStart">开始测试</button>
     <view class="social">已有 12,847 人完成测试</view>
+    <view class="privacy-link" bindtap="onPrivacy">隐私政策</view>
   </view>
 </view>
