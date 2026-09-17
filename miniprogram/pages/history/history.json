@@ -1,5 +1,5 @@
 {
-  "navigationBarTitle": "我的报告历史",
+  "navigationBarTitleText": "我的报告历史",
   "navigationBarBackgroundColor": "#1a1a2e",
   "navigationBarTextStyle": "white"
 }
