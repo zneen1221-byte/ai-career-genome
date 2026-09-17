@@ -5,6 +5,7 @@
     "pages/analyzing/analyzing",
     "pages/result/result",
     "pages/share/share",
+    "pages/history/history",
     "pages/privacy/privacy"
   ],
   "window": {
@@ -14,5 +15,6 @@
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
   "sitemapLocation": "sitemap.json"
 }

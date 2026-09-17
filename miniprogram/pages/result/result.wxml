@@ -67,6 +67,7 @@
     <view class="ai-fallback" wx:if="{{!result.ai_report}}">深度 AI 报告生成失败，已展示基础画像</view>
 
     <button class="btn-share" open-type="share">分享给朋友，看 TA 是什么基因</button>
+    <button class="btn-poster" bindtap="onGeneratePoster">生成AI职业卡</button>
     <button class="btn-cta" bindtap="onRestart">重新测试</button>
   </view>
 </view>

@@ -1,0 +1,53 @@
+<!-- pages/history/history.wxml - 我的报告历史 -->
+<view class="page">
+  <view class="bg"></view>
+  <view class="content">
+
+    <view class="header">
+      <view class="title">我的报告历史</view>
+      <view class="subtitle" wx:if="{{reports.length > 0}}">共 {{reports.length}} 份报告</view>
+    </view>
+
+    <!-- 加载中 -->
+    <view wx:if="{{loading}}" class="state loading">
+      <view class="spinner"></view>
+      <view class="state-text">加载中...</view>
+    </view>
+
+    <!-- 错误 -->
+    <view wx:elif="{{error}}" class="state">
+      <view class="state-text">加载失败</view>
+      <view class="state-tip">{{error}}</view>
+      <button class="btn-retry" bindtap="onRetry">重试</button>
+    </view>
+
+    <!-- 空状态 -->
+    <view wx:elif="{{reports.length === 0}}" class="state empty">
+      <view class="empty-icon">📋</view>
+      <view class="state-text">还没有报告</view>
+      <view class="state-tip">完成一次测试后，报告会保存在这里</view>
+      <button class="btn-cta" bindtap="onStart">开始测试</button>
+    </view>
+
+    <!-- 报告列表 -->
+    <view wx:else class="list">
+      <view class="card" wx:for="{{reports}}" wx:key="_id"
+            bindtap="onViewReport" data-id="{{item._id}}">
+        <view class="card-head">
+          <view class="type-name">{{item.type_name || '探索者'}}</view>
+          <view class="time">{{item.created_at_str}}</view>
+        </view>
+        <view class="summary" wx:if="{{item.ai_report.summary}}">
+          {{item.ai_report.summary}}
+        </view>
+        <view class="summary fallback" wx:else>
+          {{item.top_type}} 型 · 静态报告
+        </view>
+        <view class="arrow">›</view>
+      </view>
+
+      <view class="footer-tip">最多保留 20 份历史报告</view>
+    </view>
+
+  </view>
+</view>

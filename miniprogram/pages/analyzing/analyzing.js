@@ -1,5 +1,6 @@
 // pages/analyzing/analyzing.js - Phase 3：调用 CloudBase AI 生成深度报告
 const ai = wx.cloud.extend.AI
+const { track } = require('../../utils/analytics')
 
 const SYSTEM_PROMPT = `你是 AI 时代职业基因解读师。根据用户的 6 维得分和 15 题作答，生成个性化职业报告。
 严格输出 JSON，不要 markdown 围栏，不要任何解释文字。
@@ -47,6 +48,7 @@ Page({
       wx.redirectTo({ url: '/pages/index/index' })
       return
     }
+    track('analyzing_enter', { top_type: testResult.top_type })
 
     // 步骤动效：每 700ms 推进一格
     this.stepTimer = setInterval(() => {
@@ -95,12 +97,19 @@ Page({
 
       if (raw) {
         aiReport = parseJsonLoose(raw)
-        if (!aiReport) console.warn('[AI] JSON 解析失败，raw=', raw.slice(0, 200))
+        if (aiReport) {
+          track('ai_call_success', { attempts: raw ? 1 : 0 })
+        } else {
+          track('ai_json_parse_fail', { raw_head: raw.slice(0, 100) })
+          console.warn('[AI] JSON 解析失败，raw=', raw.slice(0, 200))
+        }
       } else {
+        track('ai_call_fail', { reason: '3_retries_failed' })
         console.warn('[AI] 3 次重试均失败，回退静态', lastErr && (lastErr.message || lastErr.errMsg) || lastErr)
         aiReport = null
       }
     } catch (e) {
+      track('ai_call_fail', { reason: 'exception', msg: String(e && e.message || e).slice(0, 100) })
       console.warn('[AI] 调用失败，回退静态', e)
       aiReport = null
     }
@@ -108,6 +117,30 @@ Page({
     clearInterval(this.stepTimer)
     const merged = Object.assign({}, testResult, { ai_report: aiReport })
     wx.setStorageSync('testResult', merged)
+
+    // 把 AI 报告存到 reports 集合（用于"我的报告历史"页）
+    // 仅当有 AI 报告或主类型时存；report_id 用于后续追溯
+    try {
+      const db = wx.cloud.database()
+      const addRes = await db.collection('reports').add({
+        data: {
+          top_type: testResult.top_type,
+          type_name: testResult.type_info && testResult.type_info.type_name,
+          scores: testResult.scores,
+          ai_report: aiReport,
+          answers: testResult.answers || [],
+          created_at: db.serverDate()
+        }
+      })
+      merged._report_id = addRes._id
+      wx.setStorageSync('testResult', merged)
+      track('report_saved', { report_id: addRes._id })
+    } catch (e) {
+      track('report_save_fail', { msg: String(e && e.errMsg || e.message || e).slice(0, 100) })
+      // 存储失败不影响主流程
+    }
+
+    track('analyzing_complete', { has_ai: !!aiReport })
     wx.redirectTo({ url: '/pages/result/result' })
   },
 

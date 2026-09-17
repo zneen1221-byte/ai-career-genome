@@ -1,10 +1,35 @@
-<!-- pages/share/share.wxml - 分享页（海报） -->
-<view class="container">
-  <view class="placeholder">[分享页 - Phase 5 实现]</view>
-  <!--
-    TODO Phase 5: 海报内容
-    - 用户职业类型
-    - 简短描述
-    - 小程序二维码
-  -->
+<!-- pages/share/share.wxml - 海报生成页 -->
+<view class="page">
+  <view class="bg"></view>
+  <view class="content">
+
+    <view class="title">你的 AI 职业基因海报</view>
+
+    <!-- 离屏 canvas，用户不可见，仅用于绘制 -->
+    <canvas type="2d" id="poster" class="offscreen"></canvas>
+
+    <!-- 海报展示区 -->
+    <view class="poster-wrap" wx:if="{{poster}}">
+      <image src="{{poster}}" mode="widthFix"
+             show-menu-by-longpress="true" class="poster-img"></image>
+      <view class="hint">长按图片可保存到相册</view>
+    </view>
+
+    <!-- 加载中 -->
+    <view class="loading" wx:elif="{{!error}}">
+      <view class="spinner"></view>
+      <view class="loading-text">正在生成海报...</view>
+    </view>
+
+    <!-- 错误兜底 -->
+    <view class="error-wrap" wx:else>
+      <view class="error-text">海报生成失败</view>
+      <view class="error-tip">{{error}}</view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <button class="btn-save" wx:if="{{poster}}" bindtap="onSaveAlbum">保存到相册</button>
+    <button class="btn-back" bindtap="onBack">返回</button>
+
+  </view>
 </view>

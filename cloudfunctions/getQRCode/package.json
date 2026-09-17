@@ -1,0 +1,9 @@
+{
+  "name": "getQRCode",
+  "version": "1.0.0",
+  "description": "调用 wxacode.getUnlimited 生成小程序码，返回云存储 fileID",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

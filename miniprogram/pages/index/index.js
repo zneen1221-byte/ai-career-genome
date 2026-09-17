@@ -11,5 +11,10 @@ Page({
   // 点击「隐私政策」→ 跳隐私政策页
   onPrivacy() {
     wx.navigateTo({ url: '/pages/privacy/privacy' })
+  },
+
+  // 点击「我的报告历史」→ 跳历史页
+  onHistory() {
+    wx.navigateTo({ url: '/pages/history/history' })
   }
 })

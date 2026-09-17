@@ -37,3 +37,4 @@
 .cta { animation: fadeUp 0.6s ease-out both; animation-delay: 0.4s; transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; box-shadow: 0 8rpx 24rpx rgba(108,92,231,0.3); }
 .cta:active { transform: scale(0.97); box-shadow: 0 4rpx 12rpx rgba(108,92,231,0.4); }
 .privacy-link { animation: fadeUp 0.6s ease-out both; animation-delay: 0.5s; }
+.history-link { font-size: 26rpx; color: #a29bfe; margin-top: 16rpx; animation: fadeUp 0.6s ease-out both; animation-delay: 0.55s; }
